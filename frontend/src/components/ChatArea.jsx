@@ -230,7 +230,7 @@ const Message = memo(({ msg, sessionId, index, isLatestMessage }) => {
     <div
       ref={messageRef}
       key={`${sessionId}-${index}`}
-      className={`flex items-end mb-2 ${
+      className={`flex items-end mb-2 scrollbar-hide ${
         msg.type === 'user' ? 'justify-end' : msg.type === 'system' ? 'justify-center' : 'justify-start'
       }`}
     >
@@ -374,7 +374,7 @@ function ChatArea({ sessionId }) {
   }
 
   return (
-    <div className="flex flex-col mt-10 gap-2 w-full h-[60vh] sm:h-[70vh] overflow-y-auto p-2 bg-gray-900 rounded-xl shadow-inner">
+    <div className="flex flex-col mt-10 gap-2 w-full h-[60vh] scrollbar-hide sm:h-[70vh] overflow-y-auto p-2 bg-gray-900 rounded-xl shadow-inner">
       {conversations && conversations.length > 0 ? (
         conversations.map((msg, idx) =>
           msg.type === 'ai-thinking' ? (
