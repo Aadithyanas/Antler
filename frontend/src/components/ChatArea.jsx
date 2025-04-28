@@ -306,7 +306,7 @@ function ChatArea({ sessionId }) {
       setError(null);
       
       try {
-        const response = await fetch(`http://localhost:3000/session/${sessionId}`);
+        const response = await fetch(`https://antler-4k4i.onrender.com/session/${sessionId}`);
         if (!response.ok) throw new Error('Failed to fetch session messages');
         
         const data = await response.json();

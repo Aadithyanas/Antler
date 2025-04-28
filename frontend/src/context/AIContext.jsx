@@ -13,7 +13,7 @@ function AIContext({ children }) {
 
   async function saveChat(userMessage, aiResponse, sessionIdOverride) {
     try {
-      await fetch('http://localhost:3000/save-chat', {
+      await fetch('https://antler-4k4i.onrender.com/save-chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

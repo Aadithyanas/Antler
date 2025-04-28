@@ -10,7 +10,7 @@ const Sidebar = ({ userId, onSessionSelect, onCollapse, isCollapsed, setIsCollap
     const fetchSessions = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:3000/sessions/${userId}`);
+        const response = await fetch(`https://antler-4k4i.onrender.com/sessions/${userId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch sessions');
         }
@@ -46,7 +46,7 @@ const Sidebar = ({ userId, onSessionSelect, onCollapse, isCollapsed, setIsCollap
 
   const handleNewChat = async () => {
     try {
-      const response = await fetch('http://localhost:3000/sessions', {
+      const response = await fetch('https://antler-4k4i.onrender.com/sessions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -360,7 +360,7 @@ const Sidebar = ({ userId, onSessionSelect, onCollapse, isCollapsed, setIsCollap
                       e.stopPropagation();
                       if (!window.confirm('Delete this session and all its messages?')) return;
                       try {
-                        const resp = await fetch(`http://localhost:3000/session/${session._id}`, {
+                        const resp = await fetch(`https://antler-4k4i.onrender.com/session/${session._id}`, {
                           method: 'DELETE',
                         });
                         if (!resp.ok) throw new Error('Failed to delete session');
