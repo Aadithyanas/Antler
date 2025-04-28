@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
+import { Trash } from 'lucide-react';
 
 const Sidebar = ({ userId, onSessionSelect, onCollapse, isCollapsed, setIsCollapsed }) => {
   const [sessions, setSessions] = useState([]);
@@ -354,7 +355,7 @@ const Sidebar = ({ userId, onSessionSelect, onCollapse, isCollapsed, setIsCollap
                 {/* Only show delete button if sidebar is not collapsed */}
                 {!isCollapsed && (
                   <button
-                    className="delete-session-btn ml-2 p-1 rounded hover:bg-red-600/80 transition-colors"
+                    className="delete-session-btn ml-2 transition-colors"
                     title="Delete this session"
                     onClick={async (e) => {
                       e.stopPropagation();
@@ -382,7 +383,9 @@ const Sidebar = ({ userId, onSessionSelect, onCollapse, isCollapsed, setIsCollap
                       marginLeft: isCollapsed ? '0.5rem' : '0.25rem',
                     }}
                   >
-                    <FaTrash className="text-red-300" size={18} />
+                  <i class="fa-regular fa-trash-can hover-color-red"></i>
+
+
                   </button>
                 )}
               </div>
